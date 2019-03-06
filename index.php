@@ -36,9 +36,12 @@ $SecondObject = new GenerateHTML();
 </p>
 
 
-<?= $SecondObject->formRow('Nom du produit'); ?>
-<?= $SecondObject->formRow('Description'); ?>
-<?= $SecondObject->formRow('Prix'); ?>
-
-
+<main class="container">
+	<form method="post">
+		<?= $SecondObject->formRow('Nom du produit','text','IdNom','Saisissez ici votre description'); ?>
+		<?= $SecondObject->formRow('Description','textarea','IdDescription','Saisissez ici votre description'); ?>
+		<?= $SecondObject->formRow('Prix' ,'number','IdPrix'); ?>
+		<button class="btn-primary btn" type="submit" >Envoyez le formulaire</button>
+	</form>
+</main>
 <?php require_once('footer.html'); ?>

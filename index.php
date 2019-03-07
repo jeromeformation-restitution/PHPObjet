@@ -10,6 +10,15 @@ $NewObject->setPrix(0);
 
 $SecondObject = new GenerateHTML();
 
+$voitureNormale = new Voiture('Renault', 'Diesel');
+
+$voitureDiesel = new VoitureDiesel('BMW', 'Diesel');
+$voitureElec = new VoitureElec('ZEO', 'Electrique');
+
+var_dump($voitureNormale);
+var_dump($voitureDiesel);
+var_dump($voitureElec);
+
 ?>
 
 
@@ -21,9 +30,12 @@ $SecondObject = new GenerateHTML();
 	<title></title>
 </head>
 <body>
+<main class="container">
 <p>Je suis une Girafe</p>
 
 <?php var_dump($NewObject); ?>
+
+
 
 <p>
 <?= $NewObject->affichageduNom(); ?>
@@ -35,13 +47,25 @@ $SecondObject = new GenerateHTML();
 <?= $NewObject->getPrix(); ?>
 </p>
 
-
-<main class="container">
 	<form method="post">
 		<?= $SecondObject->formRow('Nom du produit','text','IdNom','Saisissez ici votre description'); ?>
 		<?= $SecondObject->formRow('Description','textarea','IdDescription','Saisissez ici votre description'); ?>
 		<?= $SecondObject->formRow('Prix' ,'number','IdPrix'); ?>
 		<button class="btn-primary btn" type="submit" >Envoyez le formulaire</button>
 	</form>
+
+
+
+<p><?= $voitureNormale->rouler(200); ?></p>
+<p><?= $voitureNormale->rouler(200); ?></p>
+
+
+<p><?= $voitureDiesel->rouler(200); ?></p>
+<p><?= $voitureDiesel->rouler(200); ?></p>
+<p><?= $voitureDiesel->rouler(200); ?></p>
+
+<p><?= $voitureElec->rouler(50); ?></p>
+<p>recharge<?= $voitureElec->recharger(); ?></p>
+<p>Reste energie<?= $voitureElec->getEnergie(); ?></p>
 </main>
 <?php require_once('footer.html'); ?>

@@ -1,6 +1,6 @@
 <?php
 
-require_once('class/autoloader.php');
+require_once('autoloader.php');
 // Déclaration des catégories (on exportera par la suite)
 // $categories = ['Voyage', 'Bien-être'];
 

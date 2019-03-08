@@ -65,7 +65,11 @@ var_dump($voitureElec);
 <p><?= $voitureDiesel->rouler(200); ?></p>
 
 <p><?= $voitureElec->rouler(50); ?></p>
-<p>recharge<?= $voitureElec->recharger(); ?></p>
+<?php
+$voitureElec = new VoitureElec('Zoé', 'Electrique');
+$voitureElec->recharger();
+$voitureElec->rouler(90); // display error message 
+?>
 <p>Reste energie<?= $voitureElec->getEnergie(); ?></p>
 </main>
 <?php require_once('footer.html'); ?>
